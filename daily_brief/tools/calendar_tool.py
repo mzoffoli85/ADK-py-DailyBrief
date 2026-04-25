@@ -10,30 +10,30 @@ load_dotenv()
 
 def get_today_events() -> dict:
     """
-    Reads today's events from Google Calendar using the secret iCal URL.
-    No OAuth or GCP required — only the GOOGLE_CALENDAR_ICS_URL env variable.
-    Returns a list of events with summary, start, end, description and location.
-    Handles recurring events and all datetime formats Google Calendar generates.
+    Lee los eventos de hoy desde Google Calendar usando la URL secreta iCal.
+    No requiere OAuth ni GCP — solo la variable GOOGLE_CALENDAR_ICS_URL en el .env.
+    Retorna una lista de eventos con título, inicio, fin, descripción y ubicación.
+    Maneja eventos recurrentes y todos los formatos de fecha que genera Google Calendar.
     """
     ics_url = os.getenv("GOOGLE_CALENDAR_ICS_URL")
     if not ics_url:
         return {
             "status": "error",
-            "message": "GOOGLE_CALENDAR_ICS_URL not set in .env file.",
+            "message": "La variable GOOGLE_CALENDAR_ICS_URL no está configurada en el archivo .env.",
         }
 
     try:
         response = requests.get(ics_url, timeout=10)
         response.raise_for_status()
     except requests.RequestException as e:
-        return {"status": "error", "message": f"Failed to fetch calendar: {e}"}
+        return {"status": "error", "message": f"Error al obtener el calendario: {e}"}
 
     try:
         cal = icalendar.Calendar.from_ical(response.content)
         today = date.today()
         occurrences = recurring_ical_events.of(cal).at(today)
     except Exception as e:
-        return {"status": "error", "message": f"Failed to parse calendar: {e}"}
+        return {"status": "error", "message": f"Error al parsear el calendario: {e}"}
 
     events = []
     for component in occurrences:

@@ -3,8 +3,8 @@ from ddgs import DDGS
 
 def web_search(query: str) -> dict:
     """
-    Searches the web using DuckDuckGo. No API key required.
-    Returns up to 5 results with title, URL and a short snippet.
+    Busca en la web usando DuckDuckGo. No requiere API key.
+    Retorna hasta 5 resultados con título, URL y un extracto breve.
     """
     try:
         results = []
@@ -19,4 +19,4 @@ def web_search(query: str) -> dict:
                 )
         return {"status": "success", "query": query, "results": results}
     except Exception as e:
-        return {"status": "error", "message": f"Search failed: {e}"}
+        return {"status": "error", "message": f"La búsqueda falló: {e}"}

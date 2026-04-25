@@ -3,6 +3,5 @@ litellm
 icalendar
 recurring-ical-events
 requests
-#duckduckgo-search
 ddgs
 python-dotenv

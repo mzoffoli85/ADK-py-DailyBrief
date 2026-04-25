@@ -1,13 +1,13 @@
 def search_drive_docs(query: str) -> dict:
     """
-    Searches Google Drive for documents related to the query.
-    NOTE: This is a stub — Google Drive requires OAuth/GCP credentials.
-    Implement in a future iteration by adding OAuth2 via google-auth-oauthlib.
+    Busca documentos en Google Drive relacionados con la consulta.
+    NOTA: Esta es una implementación stub — Google Drive requiere credenciales OAuth/GCP.
+    Implementar en una iteración futura usando OAuth2 con google-auth-oauthlib.
     """
     return {
         "status": "not_configured",
         "message": (
-            f"Google Drive is not configured in this PoC. "
-            f"Suggested manual search: '{query}'"
+            f"Google Drive no está configurado en este PoC. "
+            f"Búsqueda manual sugerida: '{query}'"
         ),
     }
