@@ -25,3 +25,6 @@ Tool chaining — la salida de Calendar alimenta a Search
 Tool selection lógica — Drive solo se consulta si hay docs relevantes
 Output estructurado — no es una respuesta de chat, es un archivo
 Agente orientado a tarea, no a conversación
+
+
+<img width="1884" height="824" alt="image" src="https://github.com/user-attachments/assets/fe17b806-c095-4942-8eb8-42fee71dd69d" />
