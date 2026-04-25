@@ -2,5 +2,8 @@
 outputs/
 __pycache__/
 .venv/
+.daily_brief/
 *.pyc
 *.pyo
+CLAUDE.md
+session.db

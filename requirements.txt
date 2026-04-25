@@ -1,6 +1,8 @@
 google-adk
 litellm
-ics
+icalendar
+recurring-ical-events
 requests
-duckduckgo-search
+#duckduckgo-search
+ddgs
 python-dotenv
